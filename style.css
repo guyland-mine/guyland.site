@@ -1,0 +1,57 @@
+/* Основные стили для сайта */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+header {
+    background-color: #777; /* Серый цвет для меню */
+    color: white;
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+section {
+    padding: 40px;
+}
+
+footer {
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .menu-content {
+        padding: 10px;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+}

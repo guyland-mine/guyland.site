@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Донат - GuyLand</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+  <!-- Навигационное меню -->
+  <div class="w-full flex justify-between items-center p-4 bg-gray-900 text-white">
+    <div class="flex items-center space-x-4">
+      <button class="text-2xl md:hidden" onclick="toggleMenu()">&#9776;</button>
+      <a href="index.html" class="text-2xl font-semibold">GuyLand</a>
+    </div>
+    <div class="space-x-6 hidden md:flex">
+      <a href="info.html" class="text-lg hover:underline">Информация</a>
+      <a href="rules.html" class="text-lg hover:underline">Правила</a>
+      <a href="map.html" class="text-lg hover:underline">Онлайн карта</a>
+      <a href="donate.html" class="text-lg hover:underline">Донат</a>
+    </div>
+  </div>
+  <!-- Контент -->
+  <div class="pt-16 px-8 flex-1">
+    <h1 class="text-3xl font-semibold">Донат на сервер</h1>
+    <p class="mt-8 text-lg">
+      Пожертвования помогают развивать сервер, добавлять новые возможности и улучшать стабильность работы. Спасибо за поддержку!
+    </p>
+
+    <div class="mt-8 space-y-6">
+      <h2 class="text-2xl font-semibold">Как задонатить</h2>
+      <p class="mt-4 text-lg">
+        Чтобы задонатить, свяжитесь с администратором в Telegram:<br>
+        <span class="font-semibold text-blue-600">@AleXyz888</span>
+      </p>
+    </div>
+
+    <div class="mt-8 space-y-6">
+      <h2 class="text-2xl font-semibold">Донат на гайлеры</h2>
+      <ul class="list-disc list-inside mt-4 text-lg space-y-2">
+        <li>1₲ = 0.01₽</li>
+        <li>100₲ = 1₽ / 0.48₴</li>
+        <li>10000₲ = 100₽ / 1.16$ / 48₴</li>
+      </ul>
+    </div>
+
+    <div class="mt-8 space-y-6">
+      <h2 class="text-2xl font-semibold">Поддержка хостинга</h2>
+      <p class="mt-4 text-lg">
+        Вы можете отправить любое количество денег для поддержки хостинга сервера.
+      </p>
+    </div>
+
+    <div class="mt-8 space-y-6">
+      <h2 class="text-2xl font-semibold">Вип-статусы</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+        <!-- Вип -->
+        <div class="border border-gray-300 rounded-lg p-6 bg-white shadow-md">
+          <h3 class="text-xl font-semibold mb-4 text-center">Вип - 250₽</h3>
+          <p class="text-gray-700 mb-4 text-center">Роль мажор1 навсегда</p>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Баланстоп</li>
+            <li>Отладка</li>
+            <li>Сид</li>
+            <li>Двойной голос на выборах модератора и судьи</li>
+            <li>1 палочка отладки</li>
+            <li>10 бесплатных гайлеров раз в месяц</li>
+            <li>Скидка на приват территории и Чанклоудер 50%</li>
+            <li>Скидка на проходки на фермы Алекса 50%</li>
+          </ul>
+        </div>
+        <!-- Вип+ -->
+        <div class="border border-gray-300 rounded-lg p-6 bg-white shadow-md">
+          <h3 class="text-xl font-semibold mb-4 text-center">Вип+ - 450₽</h3>
+          <p class="text-gray-700 mb-4 text-center">Роль мажор2 навсегда</p>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Баланстоп</li>
+            <li>Топ глешек</li>
+            <li>Отладка</li>
+            <li>Сид</li>
+            <li>Тройной голос на выборах модератора и судьи</li>
+            <li>3 палочки отладки</li>
+            <li>30 бесплатных гайлеров раз в месяц</li>
+            <li>Бесплатный доступ к секретному ТГК Алекса</li>
+            <li>Скидка на приват территории и чанклоудер 80%</li>
+            <li>Бесплатные проходки на все фермы Алекса</li>
+            <li>Доступ к файлам всех миров сервера</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Футер -->
+  <footer class="mt-auto p-6 text-center text-gray-500 text-sm">
+    © 2025 GuyLand. Все права защищены.
+  </footer>
+
+<!-- Выдвижное меню -->
+<div id="mobileMenu" class="menu-content fixed top-0 left-0 w-64 h-full bg-gray-800 text-white z-50 p-6 hidden">
+  <div class="flex justify-end">
+    <button onclick="toggleMenu()" class="text-3xl">&times;</button>
+  </div>
+  <nav class="flex flex-col space-y-4 mt-10">
+    <a href="info.html" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg text-center transition">Информация</a>
+    <a href="rules.html" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg text-center transition">Правила сервера</a>
+    <a href="map.html" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg text-center transition">Карта мира</a>
+    <a href="donate.html" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg text-center transition">Донат</a>
+  </nav>
+</div>
+
+<script>
+  const menu = document.getElementById('mobileMenu');
+  let isOpen = false;
+  function toggleMenu() {
+    if (!isOpen) {
+      menu.classList.add('menu-open');
+      menu.classList.remove('menu-close');
+      menu.classList.remove('hidden');
+      isOpen = true;
+    } else {
+      menu.classList.add('menu-close');
+      menu.classList.remove('menu-open');
+      setTimeout(() => {
+        menu.style.transform = 'translateX(-100%)';
+        menu.classList.add('hidden');
+      }, 300);
+      isOpen = false;
+    }
+  }
+</script>
+
+</body>
+</html>

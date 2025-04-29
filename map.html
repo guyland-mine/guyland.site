@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Онлайн карта - GuyLand</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    @keyframes slideIn {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(0); }
+    }
+    @keyframes slideOut {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+    .menu-content {
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(-100%);
+    }
+    .menu-open {
+      transform: translateX(0);
+      animation: slideIn 0.3s forwards;
+    }
+    .menu-close {
+      animation: slideOut 0.3s forwards;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+
+  <!-- Навигационное меню -->
+  <div class="w-full flex justify-between items-center p-4 bg-gray-900 text-white">
+    <div class="flex items-center space-x-4">
+      <button class="text-2xl md:hidden" onclick="toggleMenu()">&#9776;</button>
+      <a href="index.html" class="text-2xl font-semibold">GuyLand</a>
+    </div>
+    <div class="space-x-6 hidden md:flex">
+      <a href="info.html" class="text-lg hover:underline">Информация</a>
+      <a href="rules.html" class="text-lg hover:underline">Правила</a>
+      <a href="map.html" class="text-lg hover:underline">Онлайн карта</a>
+      <a href="donate.html" class="text-lg hover:underline">Донат</a>
+    </div>
+  </div>
+
+  <!-- Контент -->
+  <div class="pt-16 px-8 flex-1 text-center">
+    <h1 class="text-3xl font-semibold mb-8">Онлайн карта сервера</h1>
+    <a href="http://89.33.12.163:20089" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition">
+      Открыть карту в новом окне
+    </a>
+    <p class="mt-4 text-gray-500 text-sm">(Карта откроется в новой вкладке)</p>
+  </div>
+
+  <!-- Футер -->
+  <footer class="mt-auto p-6 text-center text-gray-500 text-sm">
+    © 2025 GuyLand. Все права защищены.
+  </footer>
+
+  <!-- Выдвижное меню -->
+  <div id="mobileMenu" class="menu-content fixed top-0 left-0 w-64 h-full bg-gray-800 text-white z-50 p-6 hidden">
+    <div class="flex justify-end">
+      <button onclick="toggleMenu()" class="text-3xl">&times;</button>
+    </div>
+    <nav class="flex flex-col space-y-4 mt-10">
+      <a href="info.html" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg text-center transition">Информация</a>
+      <a href="rules.html" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg text-center transition">Правила сервера</a>
+      <a href="map.html" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg text-center transition">Карта мира</a>
+      <a href="donate.html" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg text-center transition">Донат</a>
+    </nav>
+  </div>
+
+  <script>
+    const menu = document.getElementById('mobileMenu');
+    let isOpen = false;
+    function toggleMenu() {
+      if (!isOpen) {
+        menu.classList.add('menu-open');
+        menu.classList.remove('menu-close');
+        menu.classList.remove('hidden');
+        isOpen = true;
+      } else {
+        menu.classList.add('menu-close');
+        menu.classList.remove('menu-open');
+        setTimeout(() => {
+          menu.style.transform = 'translateX(-100%)';
+          menu.classList.add('hidden');
+        }, 300);
+        isOpen = false;
+      }
+    }
+  </script>
+
+</body>
+</html>

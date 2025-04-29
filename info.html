@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Информация - GuyLand</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    @keyframes slideIn {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(0); }
+    }
+    @keyframes slideOut {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+    .menu-content {
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(-100%);
+    }
+    .menu-open {
+      transform: translateX(0);
+      animation: slideIn 0.3s forwards;
+    }
+    .menu-close {
+      animation: slideOut 0.3s forwards;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+
+  <!-- Навигационное меню -->
+  <div class="w-full flex justify-between items-center p-4 bg-gray-900 text-white">
+    <div class="flex items-center space-x-4">
+      <button class="text-2xl md:hidden" onclick="toggleMenu()">&#9776;</button>
+      <a href="index.html" class="text-2xl font-semibold">GuyLand</a>
+    </div>
+    <div class="space-x-6 hidden md:flex">
+      <a href="info.html" class="text-lg hover:underline">Информация</a>
+      <a href="rules.html" class="text-lg hover:underline">Правила</a>
+      <a href="map.html" class="text-lg hover:underline">Онлайн карта</a>
+      <a href="donate.html" class="text-lg hover:underline">Донат</a>
+    </div>
+  </div>
+
+  <!-- Контент -->
+  <div class="pt-16 px-8 flex-1">
+    <h1 class="text-3xl font-semibold">Информация о сервере</h1>
+    <p class="mt-4">Добро пожаловать на сервер GuyLand! Здесь вы найдете все необходимые ресурсы, чтобы начать играть.</p>
+
+    <div class="mt-8 space-y-6">
+      <div>
+        <h2 class="text-2xl font-semibold">Основная информация:</h2>
+        <ul class="list-disc list-inside mt-2 space-y-2">
+          <li><strong>Айпи сервера:</strong> 89.33.12.163:20015</li>
+          <li><strong>Версия:</strong> 1.21 Java (подходит пиратка)</li>
+          <li><strong>Обязательно установить мод:</strong> Simple Voice Chat</li>
+          <li><strong>Рекомендуемые моды:</strong> Journey Map, Litematica</li>
+          <li><strong>Граница мира:</strong> 8000 блоков от спавна</li>
+          <li><strong>Чтобы вас добавили на сервер,напишите заявку в тг сообщество</strong></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold mt-8">Команды:</h2>
+
+        <h3 class="text-xl font-semibold mt-4">Базовые команды</h3>
+        <ul class="list-disc list-inside mt-2">
+          <li>/. — меню</li>
+          <li>/msg — писать в ЛС</li>
+          <li>/dq — квесты</li>
+          <li>/shop — магазин ресурсов</li>
+          <li>/privat — магазин имущества</li>
+          <li>/donat — донат</li>
+          <li>/copies — магазин глешек</li>
+          <li>/sit — сесть</li>
+          <li>/lay — лечь</li>
+          <li>/crawl — ползти</li>
+          <li>/bal — баланс</li>
+          <li>/pay — перевод денег</li>
+          <li>/skin — установка скина</li>
+          <li>/p me — баланс глешек</li>
+          <li>/p pay — перевод глешек</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-4">Модерские команды</h3>
+        <ul class="list-disc list-inside mt-2">
+          <li>/kick — кик игрока</li>
+          <li>/kickall — кик всех</li>
+          <li>/ban — бан</li>
+          <li>/unban — разбан</li>
+          <li>/invsee — просмотр инвентаря</li>
+          <li>/endersee — просмотр эндерчеста</li>
+          <li>/baltop — топ богачей</li>
+          <li>/whitelist — вайтлист </li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-4">Вип команды</h3>
+        <ul class="list-disc list-inside mt-2">
+          <li>/baltop — топ по гайлерам</li>
+          <li>/p lead — топ по глешкам</li>
+          <li>\debug stick — права на палочку отладки</li>
+          <li>/bal, /pay, /skin, /p me, /p pay</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold mt-8">Роли и как их получить:</h2>
+        <h3 class="text-xl font-semibold mt-4">Игроки</h3>
+        <ul class="list-disc list-inside mt-2">
+          <li><strong>Игрок I:</strong> Добавиться в вайтлист</li>
+          <li><strong>Игрок II:</strong> Быть в вайтлисте 7 дней, наиграть 12 часов, получить одобрение 3 игроков</li>
+          <li><strong>Игрок III:</strong> Наиграть 72 часа, основать город или вложиться в развитие спавна,инфраструктуры</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-4">Мажоры</h3>
+        <ul class="list-disc list-inside mt-2">
+          <li><strong>Мажор I:</strong> Быть вип</li>
+          <li><strong>Мажор II:</strong> Быть вип+</li>
+          <li><strong>Мажор III:</strong> Быть вип+, донат от 1000₽</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-4">Олигархи</h3>
+        <ul class="list-disc list-inside mt-2">
+          <li><strong>Олигарх I:</strong> Вип + A1</li>
+          <li><strong>Олигарх II:</strong> Вип+ + A1</li>
+          <li><strong>Олигарх III:</strong> Вип+ + A1 + донат от 1500₽</li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-4">Админы</h3>
+        <ul class="list-disc list-inside mt-2">
+          <li><strong>Админ I:</strong> Быть избраннным от игроков или админов.
+           Быть хотябы игроком II  
+          </li>
+          <li><strong>Админ II:</strong> Legu_hka</li>
+          <li><strong>Админ III:</strong> AleXyz8 (владелец)</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold mt-8">Права по ролям:</h2>
+        <ul class="list-disc list-inside mt-2">
+          <li><strong>Игрок I:</strong> Нет прав на взаимодействие с приватом</li>
+          <li><strong>Игрок II:</strong> Может взаимодействовать с приватом</li>
+          <li><strong>Игрок III:</strong> Может создавать приват</li>
+          <li><strong>Мажор I:</strong> Вип права</li>
+          <li><strong>Мажор II:</strong> Вип+ права</li>
+          <li><strong>Мажор III:</strong> Вип+ права + тройной голос</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Футер -->
+  <footer class="mt-auto p-6 text-center text-gray-500 text-sm">
+    © 2025 GuyLand. Все права защищены.
+  </footer>
+
+<!-- Выдвижное меню -->
+<div id="mobileMenu" class="menu-content fixed top-0 left-0 w-64 h-full bg-gray-800 text-white z-50 p-6 hidden">
+  <div class="flex justify-end">
+    <button onclick="toggleMenu()" class="text-3xl">&times;</button>
+  </div>
+  <nav class="flex flex-col space-y-4 mt-10">
+    <a href="info.html" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg text-center transition">Информация</a>
+    <a href="rules.html" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg text-center transition">Правила сервера</a>
+    <a href="map.html" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg text-center transition">Карта мира</a>
+    <a href="donate.html" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg text-center transition">Донат</a>
+  </nav>
+</div>
+
+<script>
+  const menu = document.getElementById('mobileMenu');
+  let isOpen = false;
+  function toggleMenu() {
+    if (!isOpen) {
+      menu.classList.add('menu-open');
+      menu.classList.remove('menu-close');
+      menu.classList.remove('hidden');
+      isOpen = true;
+    } else {
+      menu.classList.add('menu-close');
+      menu.classList.remove('menu-open');
+      setTimeout(() => {
+        menu.style.transform = 'translateX(-100%)';
+        menu.classList.add('hidden');
+      }, 300);
+      isOpen = false;
+    }
+  }
+</script>
+
+
+</body>
+</html>

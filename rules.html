@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Правила - GuyLand</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    @keyframes slideIn {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(0); }
+    }
+    @keyframes slideOut {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+
+    .menu-content {
+      transition: transform 0.3s ease-in-out;
+      transform: translateX(-100%);
+    }
+    .menu-open {
+      transform: translateX(0);
+      animation: slideIn 0.3s forwards;
+    }
+    .menu-close {
+      animation: slideOut 0.3s forwards;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+
+  <!-- Навигационное меню -->
+  <div class="w-full flex justify-between items-center p-4 bg-gray-900 text-white">
+    <div class="flex items-center space-x-4">
+      <button class="text-2xl md:hidden" onclick="toggleMenu()">&#9776;</button>
+      <a href="index.html" class="text-2xl font-semibold">GuyLand</a>
+    </div>
+    <div class="space-x-6 hidden md:flex">
+      <a href="info.html" class="text-lg hover:underline">Информация</a>
+      <a href="rules.html" class="text-lg hover:underline">Правила</a>
+      <a href="map.html" class="text-lg hover:underline">Онлайн карта</a>
+      <a href="donate.html" class="text-lg hover:underline">Донат</a>
+    </div>
+  </div>
+
+  <!-- Контент -->
+  <div class="pt-16 px-8 flex-1">
+    <h1 class="text-3xl font-semibold">Правила сервера</h1>
+    <div class="mt-8 space-y-6">
+      <div class="space-y-4">
+        <h2 class="text-2xl font-semibold">Правила игроков</h2>
+        <ul class="list-disc pl-6">
+            <li>Не взаимодействовать с чужими постройками и сундуками без разрешения владельца или администрации.</li>
+            <li>Не использовать читы и сторонний софт, кроме разрешённых администрацией.</li>
+            <li>Запрещены все виды дюпов, кроме TNT-машинки.</li>
+            <li>Не бить и не толкать игроков без их согласия. При нападении — записать видео или выйти с сервера и сообщить администрации.</li>
+            <li>Запрещены спам, реклама и флуд без разрешения администрации.</li>
+            <li>Не подбирать чужие вещи без согласия игрока или администрации.</li>
+            <li>Без разрешения администрации не менять масштабно ландшафт в радиусе 1000 блоков от спавна.</li>
+            <li>Дорубать деревья, застраивать дырки от криперов, не строить и не менять ландшафт в зоне спавна.</li>
+            <li>Запрещено строить источники лагов и просадок TPS без согласования с администрацией (большие фермы, механизмы, масштабные постройки).</li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <h2 class="text-2xl font-semibold">Правила администрации</h2>
+        <ul class="list-disc pl-6">
+          <li>Модератор меняется каждые 3–5 недель. Одного выбирают админы, второго — игроки.</li>
+  <li>Администрация состоит из 2 модераторов и 2 администраторов. Решения принимаются 3 голосами администрации или 2 голосами админов.</li>
+  <li>Администрация не имеет права выдавать ресурсы из креатива. При грифе компенсируются убытки.</li>
+  <li>Главный админ (Алекс) может понизить модератора за невыполнение обязанностей.</li>
+  <li>Судью выбирают игроки и админы совместно: 50% голосов — от игроков, 50% — от админов.</li>
+  <li>Судья решает споры между игроками и может изменять сроки банов. Судья помогает администрации исправлять ошибки.</li>
+        </ul>
+      </div>
+
+      <div class="space-y-4">
+        <h2 class="text-2xl font-semibold">Правила банов</h2>
+        <ul class="list-disc pl-6">
+          <li>За информацию о нарушении Конституции полагается награда 2000–10000 гайлеров в зависимости от масштаба нарушения.</li>
+          <li>Пострадавший игрок может потребовать компенсацию от нарушителя вместо подачи жалобы для его бана.</li>
+          <li>Судья имеет право изменять срок бана: уменьшать или увеличивать до 80%. Перманентный бан можно сократить максимум до 3 месяцев.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Футер -->
+  <footer class="mt-auto p-6 text-center text-gray-500 text-sm">
+    © 2025 GuyLand. Все права защищены.
+  </footer>
+
+<!-- Выдвижное меню -->
+<div id="mobileMenu" class="menu-content fixed top-0 left-0 w-64 h-full bg-gray-800 text-white z-50 p-6 hidden">
+  <div class="flex justify-end">
+    <button onclick="toggleMenu()" class="text-3xl">&times;</button>
+  </div>
+  <nav class="flex flex-col space-y-4 mt-10">
+    <a href="info.html" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg text-center transition">Информация</a>
+    <a href="rules.html" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg text-center transition">Правила сервера</a>
+    <a href="map.html" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg text-center transition">Карта мира</a>
+    <a href="donate.html" class="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg text-center transition">Донат</a>
+  </nav>
+</div>
+
+<script>
+  const menu = document.getElementById('mobileMenu');
+  let isOpen = false;
+  function toggleMenu() {
+    if (!isOpen) {
+      menu.classList.add('menu-open');
+      menu.classList.remove('menu-close');
+      menu.classList.remove('hidden');
+      isOpen = true;
+    } else {
+      menu.classList.add('menu-close');
+      menu.classList.remove('menu-open');
+      setTimeout(() => {
+        menu.style.transform = 'translateX(-100%)';
+        menu.classList.add('hidden');
+      }, 300);
+      isOpen = false;
+    }
+  }
+</script>
+
+</body>
+</html>
